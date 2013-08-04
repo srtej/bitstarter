@@ -6,8 +6,6 @@ var fs = require('fs');
 var infile = "index.html";
 var content = fs.readFileSync(infile);
 var buffer = new Buffer (content);
-buffer.toSrting('utf-8');
-
 
 
 
@@ -16,7 +14,7 @@ buffer.toSrting('utf-8');
 
 
 app.get('/', function(request, response) {
-  response.send(buffer);
+  response.send(buffer.toString());
 });
 
 var port = process.env.PORT || 5000;
