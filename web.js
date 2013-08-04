@@ -5,11 +5,8 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 var infile = "index.html";
 var content = fs.readFileSync(infile);
-
-
-
-
-var content1 = "ravitej is testing" 
+var buffer = new Buffer (content);
+buffer.toSrting('utf-8');
 
 
 
@@ -19,7 +16,7 @@ var content1 = "ravitej is testing"
 
 
 app.get('/', function(request, response) {
-  response.send(content1);
+  response.send(buffer);
 });
 
 var port = process.env.PORT || 5000;
