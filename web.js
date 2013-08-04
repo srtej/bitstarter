@@ -19,7 +19,7 @@ var content1 = "ravitej is testing"
 
 
 app.get('/', function(request, response) {
-  response.send(content);
+  response.send(content1);
 });
 
 var port = process.env.PORT || 5000;
